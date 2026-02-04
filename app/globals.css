@@ -1,0 +1,255 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(8px);
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+@keyframes typing {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-typing {
+  display: inline-block;
+  animation: typing 0.2s ease-out forwards;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: #dce5e0;
+}
+
+.dark .timeline-line {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@media print {
+
+  /* Hide non-printable elements */
+  .no-print,
+  header,
+  nav,
+  aside,
+  [class*="Sidebar"],
+  button,
+  .fixed {
+    display: none !important;
+  }
+
+  /* Reset body and html */
+  html,
+  body {
+    background: white !important;
+    color: black !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+    width: 100% !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  /* Make main content full width */
+  .flex.min-h-screen,
+  .flex-1.flex.flex-col {
+    display: block !important;
+    width: 100% !important;
+    min-height: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* Reset layout for print - critical for multi-page */
+  main,
+  .flex-1 {
+    flex: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    height: auto !important;
+    width: 100% !important;
+  }
+
+  .min-h-screen,
+  .h-screen {
+    min-height: auto !important;
+    height: auto !important;
+  }
+
+  .overflow-hidden,
+  .overflow-y-auto,
+  .overflow-x-auto,
+  .overflow-scroll {
+    overflow: visible !important;
+  }
+
+  /* Remove shadows */
+  .shadow-sm,
+  .shadow,
+  .shadow-md,
+  .shadow-lg,
+  .shadow-xl,
+  .shadow-2xl {
+    box-shadow: none !important;
+  }
+
+  .border {
+    border: 1px solid #ddd !important;
+  }
+
+  /* Grid layouts - stack vertically for simpler printing */
+  .grid.gap-4.md\:grid-cols-2.lg\:grid-cols-3,
+  .grid.gap-4 {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .grid.gap-4>* {
+    margin-bottom: 1rem !important;
+    width: 100% !important;
+  }
+
+  /* Prevent cards from being cut off */
+  [class*="Card"],
+  .card {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-bottom: 0.75rem !important;
+    width: 100% !important;
+  }
+
+  /* Preserve flex layout for transaction details - CRITICAL */
+  .flex.justify-between,
+  .flex.flex-col.md\:flex-row.justify-between {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  .flex.flex-col.items-end {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+  }
+
+  /* Fix grid layout for transaction info */
+  .grid.grid-cols-\[120px_1fr\],
+  .grid.grid-cols-\[100px_1fr\] {
+    display: grid !important;
+    gap: 0.25rem 0.75rem !important;
+    width: 100% !important;
+  }
+
+  .grid.grid-cols-\[120px_1fr\] {
+    grid-template-columns: 100px 1fr !important;
+  }
+
+  .grid.grid-cols-\[100px_1fr\] {
+    grid-template-columns: 80px 1fr !important;
+  }
+
+  /* Ensure text colors are visible in print */
+  .text-primary,
+  .text-green-600 {
+    color: #16a34a !important;
+  }
+
+  .text-muted-foreground {
+    color: #555 !important;
+  }
+
+  /* Ensure proper spacing and layout in cards */
+  .space-y-2>*+* {
+    margin-top: 0.5rem !important;
+  }
+
+  .space-y-4>*+* {
+    margin-top: 0.75rem !important;
+  }
+
+  /* Reduce padding for print */
+  .p-8,
+  .p-4 {
+    padding: 0.5rem !important;
+  }
+
+  .pt-6 {
+    padding-top: 0.5rem !important;
+  }
+
+  /* Card content styling */
+  [class*="CardContent"] {
+    padding: 0.5rem !important;
+  }
+
+  [class*="CardHeader"] {
+    padding: 0.5rem !important;
+    padding-bottom: 0.25rem !important;
+  }
+
+  /* Font sizes for better readability */
+  .text-3xl {
+    font-size: 1.25rem !important;
+  }
+
+  .text-2xl {
+    font-size: 1.125rem !important;
+  }
+
+  .text-lg {
+    font-size: 1rem !important;
+  }
+
+  /* Print page setup */
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+}
+
+.print-only {
+  display: none;
+}
