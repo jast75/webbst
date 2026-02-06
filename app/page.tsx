@@ -38,7 +38,7 @@ export default function Home() {
                                         { text: ",\n" },
                                         { text: "Jaga Bumi Tetap Indah" }
                                     ]}
-                                    speed={70}
+                                    speed={100}
                                     pauseDuration={4000}
                                     loop={true}
                                 />
