@@ -28,9 +28,9 @@ export default function Home() {
                     </div>
 
                     {/* Content Box - Glassmorphism */}
-                    <div className="relative z-10 max-w-[900px] mx-6 p-8 md:p-16 rounded-[2.5rem] backdrop-blur-xl bg-white/5 border border-white/20 shadow-2xl flex flex-col items-center text-center gap-8 animate-fade-in-up">
+                    <div className="relative z-10 max-w-[900px] mx-4 p-6 md:p-16 rounded-[2.5rem] backdrop-blur-xl bg-white/5 border border-white/20 shadow-2xl flex flex-col items-center text-center gap-8 animate-fade-in-up">
                         <div className="flex flex-col gap-4">
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight text-white min-h-[110px] md:min-h-[130px] lg:min-h-[160px]">
+                            <h1 className="text-3xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight text-white min-h-[110px] md:min-h-[130px] lg:min-h-[160px]">
                                 <Typewriter
                                     parts={[
                                         { text: "Ubah Sampah Jadi " },

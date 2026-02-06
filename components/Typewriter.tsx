@@ -53,23 +53,60 @@ const Typewriter: React.FC<TypewriterProps> = ({
         }
     }, [visibleCount, isPaused, allChars.length, speed, pauseDuration, loop]);
 
-    return (
-        <Component className={className}>
-            {allChars.slice(0, visibleCount).map((item, index) => (
-                item.char === '\n' ? (
-                    <br key={index} />
-                ) : (
+    const renderVisibleContent = () => {
+        const result: React.ReactNode[] = [];
+        let currentWord: React.ReactNode[] = [];
+        let wordKey = 0;
+
+        allChars.slice(0, visibleCount).forEach((item, index) => {
+            if (item.char === ' ' || item.char === '\n') {
+                if (currentWord.length > 0) {
+                    result.push(
+                        <span key={`word-${wordKey++}`} className="inline-block whitespace-nowrap">
+                            {currentWord}
+                        </span>
+                    );
+                    currentWord = [];
+                }
+
+                if (item.char === '\n') {
+                    result.push(<br key={`br-${index}`} />);
+                } else {
+                    result.push(
+                        <span key={`space-${index}`} style={{ whiteSpace: 'pre' }}>
+                            {item.char}
+                        </span>
+                    );
+                }
+            } else {
+                currentWord.push(
                     <span
-                        key={index}
+                        key={`char-${index}`}
                         className={`${item.className || ''} animate-typing`}
                         style={{ whiteSpace: 'pre' }}
                     >
                         {item.char}
                     </span>
-                )
-            ))}
+                );
+            }
+        });
+
+        if (currentWord.length > 0) {
+            result.push(
+                <span key={`word-${wordKey++}`} className="inline-block whitespace-nowrap">
+                    {currentWord}
+                </span>
+            );
+        }
+
+        return result;
+    };
+
+    return (
+        <Component className={className}>
+            {renderVisibleContent()}
             {/* Blinking cursor effect (optional, adding for premium feel) */}
-            <span className="animate-pulse border-r-2 border-primary ml-1" />
+            <span className="animate-pulse border-r-4 border-primary ml-1" />
         </Component>
     );
 };
