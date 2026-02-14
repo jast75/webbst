@@ -207,9 +207,10 @@ export default function UpdateHargaPage() {
                                         <span className="material-symbols-outlined text-5xl">trending_up</span>
                                     </div>
                                     <div className="flex-1">
-                                        <h4 className="text-3xl font-black text-primary mb-2">Menguat</h4>
+                                        <h4 className="text-3xl font-black text-primary mb-2">Stabil</h4>
                                         <p className="text-sm opacity-70 leading-relaxed">
-                                            Permintaan industri daur ulang meningkat tajam untuk jenis plastik PET dan Logam, mendorong harga naik stabil minggu ini seiring pulihnya ekspor.
+                                            Terdapat kenaikan yang cukup signifikan untuk item Tutup Galon, yaitu menjadi Rp 5000 dari bulan sebelumnya sebesar Rp 4000.
+                                            Beberapa item ada yang mengalami kenaikan harga antara 100 - 200 rupiah. Ada juga beberapa mengalami penurunan harga.
                                         </p>
                                     </div>
                                 </div>
@@ -226,34 +227,34 @@ export default function UpdateHargaPage() {
                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 h-full">
                                 <div className="p-4 rounded-xl border border-[#dce5e0] dark:border-white/10 bg-background-light/30 dark:bg-white/5 hover:border-primary/50 transition-colors flex flex-col justify-between group">
                                     <div>
-                                        <p className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-1 truncate" title="Aluminium Siku">Aluminium Siku</p>
-                                        <p className="text-xl font-black text-[#111814] dark:text-white">Rp 15.000</p>
+                                        <p className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-1 truncate" title="Aluminium Siku">Tutup Galon</p>
+                                        <p className="text-xl font-black text-[#111814] dark:text-white">Rp 5.000</p>
                                     </div>
                                     <div className="mt-3">
                                         <span className="inline-flex items-center gap-0.5 px-2 py-1 rounded bg-emerald-100 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 text-xs font-bold">
-                                            <span className="material-symbols-outlined text-sm">arrow_upward</span> 4.6%
+                                            <span className="material-symbols-outlined text-sm">arrow_upward</span> 25%
                                         </span>
                                     </div>
                                 </div>
                                 <div className="p-4 rounded-xl border border-[#dce5e0] dark:border-white/10 bg-background-light/30 dark:bg-white/5 hover:border-primary/50 transition-colors flex flex-col justify-between group">
                                     <div>
-                                        <p className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-1 truncate" title="Koran A">Koran A</p>
-                                        <p className="text-xl font-black text-[#111814] dark:text-white">Rp 5.000</p>
+                                        <p className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-1 truncate" title="Koran A">Besi</p>
+                                        <p className="text-xl font-black text-[#111814] dark:text-white">Rp 2.800</p>
                                     </div>
                                     <div className="mt-3">
                                         <span className="inline-flex items-center gap-0.5 px-2 py-1 rounded bg-emerald-100 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 text-xs font-bold">
-                                            <span className="material-symbols-outlined text-sm">arrow_upward</span> 5.6%
+                                            <span className="material-symbols-outlined text-sm">arrow_upward</span> 7.5%
                                         </span>
                                     </div>
                                 </div>
                                 <div className="p-4 rounded-xl border border-[#dce5e0] dark:border-white/10 bg-background-light/30 dark:bg-white/5 hover:border-primary/50 transition-colors flex flex-col justify-between group">
                                     <div>
                                         <p className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-1 truncate" title="Pet Bening">Pet Bening</p>
-                                        <p className="text-xl font-black text-[#111814] dark:text-white">Rp 2.800</p>
+                                        <p className="text-xl font-black text-[#111814] dark:text-white">Rp 3.000</p>
                                     </div>
                                     <div className="mt-3">
                                         <span className="inline-flex items-center gap-0.5 px-2 py-1 rounded bg-emerald-100 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 text-xs font-bold">
-                                            <span className="material-symbols-outlined text-sm">arrow_upward</span> 4.3%
+                                            <span className="material-symbols-outlined text-sm">arrow_upward</span> 7.5%
                                         </span>
                                     </div>
                                 </div>
