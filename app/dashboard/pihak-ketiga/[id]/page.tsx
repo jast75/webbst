@@ -14,7 +14,8 @@ import { formatDate, formatCurrency } from "@/lib/utils"
 import { useToast } from "@/hooks/use-toast"
 
 interface TransactionItem {
-    jenisSampah: string
+    jenisSampahId: string
+    nama: string
     berat: number
     hargaJual: number
     subtotal: number
@@ -96,9 +97,9 @@ export default function PihakKetigaDetailPage() {
 
         content += "Item Terjual:\n"
         transaction.items?.forEach((item, index) => {
-            const sampah = getJenisSampahById(item.jenisSampah)
+            const sampah = getJenisSampahById(item.jenisSampahId)
             const unit = sampah?.satuan || 'kg'
-            content += `${index + 1}. ${sampah?.nama || 'Unknown'} (${item.berat}${unit})\n`
+            content += `${index + 1}. ${sampah?.nama || item.nama || 'Unknown'} (${item.berat}${unit})\n`
             content += `   Harga: ${formatCurrency(item.hargaJual, settings.currency)}/${unit}\n`
             content += `   Subtotal: ${formatCurrency(Math.round(item.subtotal), settings.currency)}\n\n`
         })
@@ -215,7 +216,7 @@ export default function PihakKetigaDetailPage() {
                     </CardHeader>
                     <CardContent className="space-y-4">
                         {transaction.items?.map((item, index) => {
-                            const sampah = getJenisSampahById(item.jenisSampah)
+                            const sampah = getJenisSampahById(item.jenisSampahId)
 
                             return (
                                 <Card key={index} className="bg-slate-50">
@@ -226,7 +227,7 @@ export default function PihakKetigaDetailPage() {
                                                     #{index + 1}
                                                 </div>
                                                 <div>
-                                                    <h3 className="font-medium">{sampah?.nama || 'Unknown Item'}</h3>
+                                                    <h3 className="font-medium">{sampah?.nama || item.nama || 'Unknown Item'}</h3>
                                                     <p className="text-sm text-muted-foreground">{item.berat} {sampah?.satuan || 'kg'}</p>
                                                 </div>
                                             </div>
